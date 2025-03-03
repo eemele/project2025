@@ -1,53 +1,22 @@
-
 /* ========== Reset ========== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
   font-family: Arial, sans-serif;
+  
+}
+
+.body-background{
   background: #f2f2f2;
-}
-
-/* Tooltip Styling */
-.tooltip {
-visibility: hidden;
-width: auto;
-background-color: black;
-color: #fff;
-text-align: center;
-border-radius: 5px;
-padding: 3px 3px;
-position: absolute;
-z-index: 1;
-top: 150%;
-left: 50%;
-transform: translateX(-50%);
-opacity: 0;
-transition: opacity 0.3s;
-white-space: nowrap;
-}
-
-.icon-container:hover .tooltip {
-visibility: visible;
-opacity: 1;
-}
-
-/* Cart Count Styling */
-.cart-icon {
-position: relative;
-}
-
-.cart-count {
-position: absolute;
-top: -5px;
-right: -10px;
-background: red;
-color: white;
-font-size: 0.75rem;
-padding: 2px 6px;
-border-radius: 50%;
+  background-image: url("images/white.jfif"); /* Replace with your image path */
+  background-size: cover; /* Ensures the image covers the entire viewport */
+  background-position: center;
+  background-attachment: fixed; /* Keeps the background fixed while elements scroll */
+  background-repeat: no-repeat;
 }
 
 /* ========== Navbar Styles ========== */
@@ -59,6 +28,7 @@ border-radius: 50%;
   background: rgba(0, 0, 0, 0.7);
   z-index: 1000;
 }
+
 .nav-container {
   max-width: 1200px;
   margin: 0 auto;
@@ -67,6 +37,7 @@ border-radius: 50%;
   align-items: center;
   padding: 0.75rem 1rem;
 }
+
 .brand-logo {
   color: #fff;
   text-decoration: none;
@@ -79,23 +50,28 @@ border-radius: 50%;
   display: flex;
   align-items: center;
 }
+
 .nav-large ul {
   list-style: none;
   display: flex;
 }
+
 .nav-large ul li {
   margin: 0 1rem;
   position: relative;
 }
+
 .nav-large ul li a {
   color: #fff;
   text-decoration: none;
   padding: 0.5rem;
   transition: color 0.3s;
 }
+
 .nav-large ul li a:hover {
   color: #ddd;
 }
+
 /* Dropdown for large screens */
 .dropdown-content {
   display: none;
@@ -106,15 +82,18 @@ border-radius: 50%;
   min-width: 150px;
   z-index: 1001;
 }
+
 .dropdown-content a {
   display: block;
   padding: 0.5rem 1rem;
   color: #fff;
   text-decoration: none;
 }
+
 .dropdown-content a:hover {
   background: #333;
 }
+
 .dropdown:hover .dropdown-content {
   display: block;
 }
@@ -125,17 +104,20 @@ border-radius: 50%;
   align-items: center;
   margin-left: 1rem;
 }
+
 .search-bar {
   display: flex;
   align-items: center;
   margin-right: 1rem;
 }
+
 .search-bar input {
   padding: 0.3rem 0.5rem;
   border: none;
   border-radius: 3px 0 0 3px;
   font-size: 1rem;
 }
+
 .search-bar button {
   padding: 0.3rem 0.5rem;
   border: none;
@@ -144,22 +126,27 @@ border-radius: 50%;
   border-radius: 0 3px 3px 0;
   cursor: pointer;
 }
+
 .search-bar button:hover {
   background: #e68a00;
 }
+
 .icon-container {
   position: relative;
   margin-left: 1rem;
 }
+
 .icon-container a {
   color: #fff;
   text-decoration: none;
   font-size: 1.2rem;
   transition: color 0.3s;
 }
+
 .icon-container a:hover {
   color: #ddd;
 }
+
 .cart-count {
   position: absolute;
   top: -5px;
@@ -171,6 +158,30 @@ border-radius: 50%;
   border-radius: 50%;
 }
 
+/* Tooltip Styling */
+.tooltip {
+  visibility: hidden;
+  width: auto;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 5px;
+  padding: 3px 3px;
+  position: absolute;
+  z-index: 1;
+  top: 150%;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s;
+  white-space: nowrap;
+}
+
+.icon-container:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+
 /* ========== Navbar Toggler for Small Screens ========== */
 .navbar-toggler {
   background: none;
@@ -179,6 +190,7 @@ border-radius: 50%;
   display: none; /* Hidden on large screens */
   outline: none;
 }
+
 .navbar-toggler-icon {
   width: 30px;
   height: 3px;
@@ -186,6 +198,7 @@ border-radius: 50%;
   display: block;
   position: relative;
 }
+
 .navbar-toggler-icon::before,
 .navbar-toggler-icon::after {
   content: '';
@@ -196,9 +209,11 @@ border-radius: 50%;
   left: 0;
   transition: all 0.3s;
 }
+
 .navbar-toggler-icon::before {
   top: -8px;
 }
+
 .navbar-toggler-icon::after {
   top: 8px;
 }
@@ -216,13 +231,71 @@ border-radius: 50%;
   padding: 1rem;
   overflow-y: auto;
 }
+
+/* ========== Button Group Styling ========== */
+.btn-group {
+  display: flex;
+  gap: 15px; /* Space between buttons */
+  justify-content: center; /* Centering the buttons */
+  margin-top: 20px;
+}
+
+/* Shared Button Styling */
+.shop-now-btn,
+.sell-now-btn {
+  border: 1px solid black;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 8px 1px 8px 1px;
+  display: inline-block;
+  text-align: center;
+  transition: transform 0.2s ease-in-out, background-color 0.3s ease-in-out;
+  animation: beat 1.5s infinite; /* Beating effect every 3 seconds */
+}
+
+/* Beating Animation */
+@keyframes beat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+/* Shop Now Button */
+.shop-now-btn {
+  background-color:  #3085df ;
+}
+
+.shop-now-btn:hover {
+  background-color:  #007bff;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Sell Now Button */
+.sell-now-btn {
+  background-color: #ffa41b; /* Blue */
+}
+
+.sell-now-btn:hover {
+  background-color: #c77800;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+
 .offcanvas-menu.show {
   right: 0;
 }
+
 .offcanvas-header {
   display: flex;
   justify-content: flex-end;
 }
+
 .offcanvas-close {
   background: none;
   border: none;
@@ -230,63 +303,42 @@ border-radius: 50%;
   font-size: 2rem;
   cursor: pointer;
 }
+
 .offcanvas-body {
   margin-top: 1rem;
 }
+
 .offcanvas-body ul {
   list-style: none;
   padding: 0;
 }
+
 .offcanvas-body ul li {
   margin: 1rem 0;
   position: relative;
 }
+
 .offcanvas-body ul li a {
   color: #fff;
   text-decoration: none;
   font-size: 1.2rem;
 }
+
 .offcanvas-body .nav-actions {
   margin-top: 1.5rem;
   display: flex;
   flex-direction: column;
 }
+
 .offcanvas-body .nav-actions .search-bar {
   margin-bottom: 1rem;
 }
 
-/* ========== Media Queries ========== */
-@media (max-width: 768px) {
-  /* Hide inline navigation on small screens */
-  .nav-large {
-    display: none;
-  }
-  /* Show the toggler button */
-  .navbar-toggler {
-    display: block;
-  }
-}
-
-
-
-
-
-/* Reset */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  font-family: Arial, sans-serif;
-}
-
-/* Hero Slider Container */
+/* ========== Hero Slider Section ========== */
 .hero-slider {
   position: relative;
   width: 100%;
-  height: 100vh; /* Full viewport height */
+  height: 100vh;
   overflow: hidden;
 }
 
@@ -300,22 +352,27 @@ body {
   background-size: cover;
   background-position: center;
   opacity: 0;
-  transition: opacity 1s ease;
+  transition: opacity 1s ease-in-out;
 }
 
+/* Background Images for Each Slide */
+.slide:nth-child(1) {
+  background-image: url('images/premium_photo-1721742730758-0bb3ba39716f.avif');
+}
+.slide:nth-child(2) {
+  background-image: url('images/marketplace.png');
+}
+.slide:nth-child(3) {
+  background-image: url('images/marketplace blue.avif');
+}
+
+/* Make the active slide visible */
 .slide.active {
   opacity: 1;
 }
 
-/* Dim on hover */
-.slide:hover {
-  filter: brightness(0.3);
-}
-.active:hover {
-  filter: brightness(0.3);
-}
 
-/* Slide Content (Centered Text & Button) */
+/* Slide Content */
 .slide-content {
   position: absolute;
   top: 50%;
@@ -336,27 +393,103 @@ body {
   margin-bottom: 2rem;
 }
 
-/* Shop Now Button */
-.shop-now-btn {
-  padding: 0.75rem 1.5rem;
-  background: #f90;
-  color: #fff;
-  text-decoration: none;
-  font-size: 1.2rem;
-  border-radius: 5px;
-  transition: background 0.3s ease;
-}
-
-.shop-now-btn:hover {
-  background: #e68a00;
-}
-
-/* Responsive Text Sizes */
+/* Responsive Adjustments */
 @media (max-width: 768px) {
+  .nav-large {
+    display: none;
+  }
+
+  .navbar-toggler {
+    display: block;
+  }
+
   .slide-content h1 {
     font-size: 2.5rem;
   }
   .slide-content p {
     font-size: 1.2rem;
+  }
+}
+
+
+
+
+
+.carousel-wrapper {
+  background-color: #f1f1f1;
+  display: flex;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  width: 100%;
+  margin-bottom: 30px; /* Adds space below the carousel */
+  padding-bottom: 40px; /* Adds extra padding inside the carousel */
+}
+
+
+.carousel-title {
+  margin-top: 5%;
+  text-align: center;
+  font-size: 45px;
+  font-weight: bold;
+  color: #000000;
+}
+
+
+.carousel {
+  margin-top: 4%;
+  display: flex;
+  min-width: 100%;
+  will-change: transform;
+}
+
+.carousel-item-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.carousel-item {
+  flex: 0 0 auto;
+  width: 300px;
+  text-align: center;
+  background-color: #ffbb33;
+  padding: 15px;
+  border-radius: 10px;
+  margin: 0 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+.carousel-item:hover {
+  transform: scale(1.05);
+}
+
+
+.brand-logo {
+  margin-left: -80%;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  margin-bottom: 10px;
+}
+
+.featured-product {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  margin-top: 10px;
+  border-radius: 5px;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .carousel-title {
+    font-size: 20px; /* Smaller font size */
+    color: #000000; /* Change color */
+    font-weight: bold;
+    text-align: center; /* Align text to the left */
+    padding-left: 10px;
   }
 }
