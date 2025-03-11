@@ -82,3 +82,123 @@ document.addEventListener("DOMContentLoaded", function () {
   scrollCarousel();
 });
 
+
+
+
+
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  const filterButtons = document.querySelectorAll(".filter-btn");
+
+  filterButtons.forEach(button => {
+      button.addEventListener("click", function () {
+          let category = this.getAttribute("data-category");
+          let section = this.getAttribute("data-section");
+
+          // Activate the clicked button
+          document.querySelectorAll(`.${section}-filter .filter-btn`).forEach(btn => {
+              btn.classList.remove("active");
+          });
+          this.classList.add("active");
+
+          // Filter Products
+          let products = document.querySelectorAll(`.${section}-grid .product-card`);
+          products.forEach(product => {
+              if (category === "all" || product.getAttribute("data-category") === category) {
+                  product.style.display = "block";
+              } else {
+                  product.style.display = "none";
+              }
+          });
+      });
+  });
+});
+
+
+
+
+// testimony
+document.addEventListener("DOMContentLoaded", function () {
+  const reviewsContainer = document.getElementById("reviews-slider");
+  const reviews = Array.from(reviewsContainer.children);
+  let index = 0;
+
+  function showReviews() {
+      reviewsContainer.innerHTML = ""; // Clear the container
+
+      for (let i = 0; i < 3; i++) {
+          let reviewIndex = (index + i) % reviews.length; // Loop through reviews
+          reviewsContainer.appendChild(reviews[reviewIndex].cloneNode(true)); // Clone and append
+      }
+
+      index = (index + 1) % reviews.length; // Move to the next review set
+  }
+
+  showReviews(); // Initial load
+  setInterval(showReviews, 5000); // Change reviews every 5 seconds
+});
+
+
+
+
+
+
+
+// for logos section
+
+document.addEventListener("DOMContentLoaded", function () {
+  const shopLogosContainer = document.querySelector(".shop-logos-container");
+  const prevShopBtn = document.querySelector(".prev-shop-btn");
+  const nextShopBtn = document.querySelector(".next-shop-btn");
+
+  let scrollAmount = 0;
+  const scrollStep = 200; // Adjust scroll step for better movement
+
+  nextShopBtn.addEventListener("click", () => {
+      shopLogosContainer.scrollLeft += scrollStep;
+  });
+
+  prevShopBtn.addEventListener("click", () => {
+      shopLogosContainer.scrollLeft -= scrollStep;
+  });
+});
+
+
+
+
+
+
+
+
+
+
+// u would like 
+
+document.addEventListener("DOMContentLoaded", function () {
+  const carousel = document.querySelector(".you-would-like-carousel");
+  const prevBtn = document.querySelector(".you-would-like-prev-btn");
+  const nextBtn = document.querySelector(".you-would-like-next-btn");
+
+  let scrollAmount = 0;
+  let cardWidth = document.querySelector(".you-would-like-product-card").offsetWidth + 15; 
+
+  nextBtn.addEventListener("click", () => {
+      if (scrollAmount < carousel.scrollWidth - carousel.clientWidth) {
+          scrollAmount += cardWidth * 2; // Move by 2 cards
+          carousel.style.transform = `translateX(-${scrollAmount}px)`;
+      }
+  });
+
+  prevBtn.addEventListener("click", () => {
+      if (scrollAmount > 0) {
+          scrollAmount -= cardWidth * 2;
+          carousel.style.transform = `translateX(-${scrollAmount}px)`;
+      }
+  });
+});
+
+
