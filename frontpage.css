@@ -1130,3 +1130,63 @@ outline: 0.4px solid   #ff6600 ;
       text-align: center;
   }
 }
+
+
+
+
+
+
+/* Icon Container */
+.icon-container {
+  position: relative;
+  display: inline-block;
+}
+
+/* User Icon */
+.user-icon {
+  font-size: 24px;
+  cursor: pointer;
+  color: #f1f1f1;
+  padding: 10px;
+}
+
+/* Dropdown Menu */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  background: rgb(17, 16, 16);
+  /* min-width: 120px; */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  z-index: 1000;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: #ebeaea;
+  transition: 0.3s;
+}
+
+.dropdown-content a:hover {
+  background: #2c2b2b;
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Tooltip for better UX */
+
+
+.user-icon:hover + .tooltip {
+  display: block;
+}
