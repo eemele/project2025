@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="signup for sellers.css">
+    <title>Sell on marketmix</title>
+</head>
+<body>
+    
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seller Signup - Marketplace</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="signup-container">
+        <img class="img" src="images/marketmix.png" alt="logo">
+        <h2>sell on MarketMix</h2>
+        <p>Join our marketplace and start selling today!</p>
+        
+        <form action="signup_process.php" method="POST">
+            <div class="form-group">
+                <label for="full-name">full name</label>
+                <input type="text" id="fullname" name="full_name" required placeholder="Your full Name">
+            </div>
+
+            <div class="form-group">
+                <label for="store-name">Store Name</label>
+                <input type="text" id="store-name" name="store_name" required placeholder="Your Store Name">
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required placeholder="example@email.com">
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" required placeholder="+123 456 7890">
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required placeholder="********">
+            </div>
+
+            <div class="form-group">
+                <label for="confirm-password">Confirm Password</label>
+                <input type="password" id="confirm-password" name="confirm_password" required placeholder="********">
+            </div>
+
+            <div class="form-group">
+                <label for="business-type">Business Type</label>
+                <select id="business-type" name="business_type" required>
+                    <option value="" disabled selected>Select business type</option>
+                    <option value="individual">Individual</option>
+                    <option value="company">Company</option>
+                </select>
+            </div>
+
+            <button type="submit" class="signup-btn">Sign Up</button>
+            
+            <p class="login-link">Already have an account? <a href="login for sellers.html">Log in</a></p>
+        </form>
+    </div>
+</body>
+</html>
+
+</body>
+</html>
