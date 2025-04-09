@@ -95,28 +95,27 @@ document.addEventListener("DOMContentLoaded", function () {
   const filterButtons = document.querySelectorAll(".filter-btn");
 
   filterButtons.forEach(button => {
-      button.addEventListener("click", function () {
-          let category = this.getAttribute("data-category");
-          let section = this.getAttribute("data-section");
+    button.addEventListener("click", function () {
+      let category = this.getAttribute("data-category");
+      let section = this.getAttribute("data-section");
 
-          // Activate the clicked button
-          document.querySelectorAll(`.${section}-filter .filter-btn`).forEach(btn => {
-              btn.classList.remove("active");
-          });
-          this.classList.add("active");
-
-          // Filter Products
-          let products = document.querySelectorAll(`.${section}-grid .product-card`);
-          products.forEach(product => {
-              if (category === "all" || product.getAttribute("data-category") === category) {
-                  product.style.display = "block";
-              } else {
-                  product.style.display = "none";
-              }
-          });
+      document.querySelectorAll(`.${section}-filter .filter-btn`).forEach(btn => {
+        btn.classList.remove("active");
       });
+      this.classList.add("active");
+
+      let products = document.querySelectorAll(`.${section}-grid .product-card`);
+      products.forEach(product => {
+        if (category === "all" || product.getAttribute("data-category") === category) {
+          product.style.display = "block";
+        } else {
+          product.style.display = "none";
+        }
+      });
+    });
   });
 });
+
 
 
 
@@ -200,5 +199,4 @@ document.addEventListener("DOMContentLoaded", function () {
       }
   });
 });
-
 
